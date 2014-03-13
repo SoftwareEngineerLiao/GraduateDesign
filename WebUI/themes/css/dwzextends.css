@@ -1,0 +1,56 @@
+a.btnWarn, a.btnFolder, a.btnText, a.btnInfo, a.btnSearch, a.btnStar, a.btnTag, a.btnApp, a.btnConsole, a.btnImg, a.btnCal{background:url(../default/images/button/imgX.gif) no-repeat; display:block; width:24px; height:20px; text-indent:-1000px; overflow:hidden; float:left; margin-right: 3px}
+a.btnWarn{background-position: -206px 0}
+a.btnFolder{background-position: -229px 0}
+a.btnText{background-position: -252px 0}
+a.btnInfo{background-position: -275px 0}
+a.btnSearch{background-position: -298px 0}
+a.btnStar{background-position: -321px 0}
+a.btnTag{background-position: -344px 0}
+a.btnApp{background-position: -367px 0}
+a.btnCal{background-position: -390px 0}
+a.btnImg{background-position: -413px 0}
+a.btnConsole{background-position: -436px 0}
+
+.panelBar .toolBar span{ background:url(../default/images/grid/icon.png) no-repeat;}
+.panelBar .toolBar li.hover span {background:url(../default/images/grid/icon.png) no-repeat;}
+
+.panelBar .toolBar a.add span {background:url(../default/images/grid/grid.png) no-repeat; background-position:0 -696px;}
+.panelBar .toolBar a.delete span {background:url(../default/images/grid/grid.png) no-repeat; background-position:0 -746px;}
+.panelBar .toolBar a.edit span {background:url(../default/images/grid/grid.png) no-repeat; background-position:0 -796px;}
+.panelBar .toolBar a.icon span { background:url(../default/images/grid/grid.png) no-repeat;background-position:0 -846px;}
+
+.panelBar .toolBar a.adda span { background-position:0 0px;}
+.panelBar .toolBar a.appadd span { background-position:0 -24px;}
+.panelBar .toolBar a.accept span { background-position:0 -48px;}
+.panelBar .toolBar a.appview span { background-position:0 -72px;}
+.panelBar .toolBar a.trash span { background-position:0 -96px;}
+.panelBar .toolBar a.note span { background-position:0 -120px;}
+
+.panelBar .toolBar a.envelope span { background-position:0 -144px;}
+.panelBar .toolBar a.crossa span { background-position:0 -168px;}
+.panelBar .toolBar a.deletea span { background-position:0 -192px;}
+.panelBar .toolBar a.stop span { background-position:0 -216px;}
+.panelBar .toolBar a.deleteb span { background-position:0 -240px;}
+.panelBar .toolBar a.persona span { background-position:0 -264px;}
+
+.panelBar .toolBar a.personb span { background-position:0 -288px;}
+.panelBar .toolBar a.personc span { background-position:0 -312px;}
+.panelBar .toolBar a.persond span { background-position:0 -336px;}
+.panelBar .toolBar a.savea span { background-position:0 -360px;}
+.panelBar .toolBar a.database span { background-position:0 -384px;}
+.panelBar .toolBar a.warn span { background-position:-0 -408px;}
+
+.panelBar .toolBar a.info span { background-position:0 -432px;}
+.panelBar .toolBar a.help span { background-position:0 -456px;}
+.panelBar .toolBar a.lock span { background-position:0 -480px;}
+.panelBar .toolBar a.unlock span { background-position:0 -504px;}
+.panelBar .toolBar a.ppt span { background-position:0 -528px;}
+.panelBar .toolBar a.execl span { background-position:0 -552px;}
+
+.panelBar .toolBar a.word span { background-position:0 -576px;}
+.panelBar .toolBar a.text span { background-position:0 -600px;}
+.panelBar .toolBar a.tool span { background-position:0 -624px;}
+.panelBar .toolBar a.editc span { background-position:0 -648px;}
+.panelBar .toolBar a.link span { background-position:0 -672px;}
+.panelBar .toolBar a.find span { background-position:0 -696px;}
+

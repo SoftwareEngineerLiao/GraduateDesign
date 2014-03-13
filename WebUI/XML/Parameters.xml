@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Parameter>
+    <Space>10000</Space>
+    <PageSize>20</PageSize>
+    <FileType>word</FileType>
+    <Error>服务器繁忙，请稍后重试！</Error>
+    <weather>http://weather.raychou.com/?/detail/58502/count_1/rss</weather>
+  <Class>初一年级|初二年级|初三年级</Class>
+  <SchoolYear>2012-2013|2013-2014</SchoolYear>
+  <CurrentSchoolYear>2012-2013</CurrentSchoolYear>
+  <CurrentXueQi>第二学期</CurrentXueQi>
+  <学周>20</学周>
+</Parameter>
