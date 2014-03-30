@@ -11,6 +11,8 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;  
 
 using DAL;
 using Model;
@@ -40,7 +42,6 @@ public class UserManage : IHttpHandler, IRequiresSessionState
             case "PersonalSettings":
                 PersonalSettings(context);
                 break;
-
         }
     }
 
@@ -113,8 +114,12 @@ public class UserManage : IHttpHandler, IRequiresSessionState
             string userName = context.Request.Form["UserName"].Trim();
             string userRole = context.Request.Form["Role"].Trim();
             string realName = context.Request.Form["RealName"].Trim();
+            
             if (!String.IsNullOrEmpty(context.Request.Form["NewUserPwd"].Trim()))
+            {
                 pwd = DbTools.Md5(context.Request.Form["NewUserPwd"].Trim());
+            }
+            
             string userState = context.Request.Form["State"].Trim();
             String time = DateTime.Now.ToString("yyyy-MM-dd");
             string sql1 = "select role_id from role where role_name='" + userRole + "'";
@@ -158,7 +163,7 @@ public class UserManage : IHttpHandler, IRequiresSessionState
         }
     }
 
-
+   
 
     /// <summary>
     /// 回复成功的json {"statusCode":"200", "message":"操作成功!"}"

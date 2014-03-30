@@ -5,19 +5,20 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
- using DAL;
+using DAL;
 using System.Data;
 
-namespace WebUI.Admin.Class
+namespace WebUI.Admin.Academy
 {
-    public partial class ClassManage1 : System.Web.UI.Page
+    public partial class AcademyManage : System.Web.UI.Page
     {
-        public ClassDAL classDAL = new ClassDAL();
         protected int Count = 0;
         protected int NowPage = 1;
         protected int PageSize = Help.GetSize;
         protected List<string> p = new List<string>();
+        public AcademyDAL academyDAL = new AcademyDAL();
         Help help = new Help();
+
         #region 分页变量，与UI绑定
         private int numPerPage;
         /// <summary>
@@ -124,9 +125,9 @@ namespace WebUI.Admin.Class
 
         public void Check()
         {
-            p.Add("CC01");
-            p.Add("CC02");
-            p.Add("CC03");
+            p.Add("XX01");
+            p.Add("XX02");
+            p.Add("XX03");
             p = help.SysCheck(p);
         }
 
@@ -137,21 +138,19 @@ namespace WebUI.Admin.Class
                 help.SysCheck(Page, "X000");
                 Check();
             }
-
             DataTable dt;
-            orderField = OrderField == null ? "class_no" : OrderField;
+            orderField = OrderField == null ? "academy_no" : OrderField;
             orderDirection = OrderDirection == null ? "asc" : OrderDirection;
             string orderStr = " " + orderField + " " + orderDirection + " ";
 
-            string sqlWhere = "1=1 and class_no like '%" + KeyString + "%' ";
+            string sqlWhere = "1=1 ";
 
             if (!string.IsNullOrEmpty(KeyString)) // 排序
             {
+                sqlWhere += "and academy_name like '%" + KeyString + "%'  ";
                 sqlWhere += "or academy_no like '%" + KeyString + "%'  ";
-                sqlWhere += "or major like '%" + KeyString + "%'  ";
-
             }
-            dt = classDAL.GetClassAll(orderStr, sqlWhere);
+            dt = academyDAL.GetAcademy(orderStr, sqlWhere);
             totalCount = dt.Rows.Count;                 // 设置总条数
             PagedDataSource pds = new PagedDataSource();
             pds.DataSource = dt.DefaultView;
@@ -161,6 +160,5 @@ namespace WebUI.Admin.Class
             this.Repeater1.DataSource = pds;
             Repeater1.DataBind();
         }
-        
     }
 }

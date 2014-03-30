@@ -2,15 +2,35 @@
 <Permissions_Group>
 
   <Group_List info="aa">
-    <title>班级管理</title>
+    <title>通知管理</title>
     <icon>themes/menu/notify.gif</icon>
     <pid>C000</pid>
+    <Group>
+      <name>通知信息管理</name>
+      <url>Admin/Notice/NoticeManage.aspx</url>
+      <icon>themes/menu/work_plan.gif</icon>
+      <type>0</type>
+      <pid>C001</pid>
+    </Group>
+  </Group_List>
+  
+  <Group_List info="aa">
+    <title>学院班级信息管理</title>
+    <icon>themes/menu/notify.gif</icon>
+    <pid>X000</pid>
+    <Group>
+      <name>学院信息管理</name>
+      <url>Admin/Academy/AcademyManage.aspx</url>
+      <icon>themes/menu/work_plan.gif</icon>
+      <type>0</type>
+      <pid>X001</pid>
+    </Group>
     <Group>
       <name>班级信息管理</name>
       <url>Admin/Class/ClassManage.aspx</url>
       <icon>themes/menu/work_plan.gif</icon>
       <type>0</type>
-      <pid>C001</pid>
+      <pid>X002</pid>
     </Group>
   </Group_List>
   

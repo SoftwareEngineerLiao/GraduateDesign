@@ -47,9 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcademyDAL.cs" />
     <Compile Include="ClassDAL.cs" />
     <Compile Include="Help.cs" />
     <Compile Include="LogDAL.cs" />
+    <Compile Include="NoticeDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleDAL.cs" />
     <Compile Include="UserDAL.cs" />

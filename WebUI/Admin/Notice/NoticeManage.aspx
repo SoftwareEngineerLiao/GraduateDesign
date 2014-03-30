@@ -1,6 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ClassManage.aspx.cs" Inherits="WebUI.Admin.Class.ClassManage1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NoticeManage.aspx.cs" Inherits="WebUI.Admin.Class.ClassManage" %>
+<script src="../../JS/Help.js" type="text/javascript"></script>
 
-<form id="pagerForm" method="post" action="Admin/Class/ClassManage.aspx">
+<form id="pagerForm" method="post" action="Admin/Notice/NoticeManage.aspx">
 	<input type="hidden" name="keyString" value="<%=KeyString %>" />
 	<input type="hidden" name="pageNum" value="1" />
 	<input type="hidden" name="numPerPage" value="<%=NumPerPage%>" />
@@ -11,8 +12,8 @@
 
 <script type="text/javascript">
             function dbltable(target, rel) {
-                if (target == 'class') {
-                    $.pdialog.open("Admin/Class/ClassEdit.aspx?id=" + rel, "pdialogid", "修改", { max: false, mask: false, width: 700, height: 400 });
+                if (target == 'notice') {
+                    $.pdialog.open("Admin/Notice/NoticeEdit.aspx?id=" + rel, "pdialogid", "修改", { max: false, mask: false, width: 700, height: 600 });
                 }
             }
              $(function () {
@@ -23,7 +24,7 @@
 </script>
  <div class="page">
  	<div class="pageHeader">
-	<form onsubmit="return navTabSearch(this);" action="Admin/Class/ClassManage.aspx" method="post">
+	<form onsubmit="return navTabSearch(this);" action="Admin/Notice/NoticeManage.aspx" method="post">
         <div class="searchBar">
             关键字
             <input name="keyString" size="30" type="text" value="<%=KeyString%>" />
@@ -44,56 +45,58 @@
      <div class="pageContent">
         <div class="panelBar">
             <ul class="toolBar">
-                 <% if(p[0].ToString() == "")
+               <% if(p[0].ToString() == "")
                 {%>
-               <li><a class="add" href="Admin/Class/ClassAdd.aspx" target="dialog"  maxable="true" mask="true" minable="true" resizable="true" drawable="true" rel="dlg_add"><span>添加</span></a></li>
-                <li class="line">line</li>
-                <% }%>
-                  <% if(p[1].ToString() == "")
-                {%>
-                <li><a class="delete" href="#" onclick="navMenuTodo('Admin/Class/ClassManage.aspx?method=Delete','class_no','您确定要删除已勾选信息吗?')"><span>删除</span></a></li>
-                <li class="line">line</li>
-                <% }%>
-                <% if(p[2].ToString() == "")
-                {%>
-                <li><a class="edit" href="#" onclick="navMenuEditTodo('Admin/Class/ClassEdit.aspx','class_no ','Edit','修改',700, 400)"><span>修改</span></a></li>
+                <li><a class="add" href="#" onclick="navMenuAddTodo('Admin/Notice/NoticeAdd.aspx','dlg_add','添加',700,600)"><span>添加</span></a></li>
+               
                 <li class="line">line</li>
                  <% }%>
+                 <% if(p[2].ToString() == "")
+                {%>
+                <li><a class="delete" href="#" onclick="navMenuTodo('../AJAX/Notice/NoticeManage.ashx?method=Delete','id','您确定要删除已勾选信息吗?')"><span>删除</span></a></li>
+                <li class="line">line</li>
+                <% }%>
+                <% if(p[1].ToString() == "")
+                {%>
+                <li><a class="edit" href="#" onclick="navMenuEditTodo('Admin/Notice/NoticeEdit.aspx','id ','Edit','修改',700, 600)"><span>修改</span></a></li>
+                <li class="line">line</li>
+                <% }%>
+                
             </ul>
         </div>
            <table class="table" layouth="133" width="100%" >
 			<thead>
 				<tr >  
-				<th style="width: 4%;" align="center">
-               <input id="chkAddAll" align="center" onclick="AllCheck('class_no','chkAddu')" type="checkbox" name="chkAddu" />
+				<th style="width: 4%;" align=center>
+               <input id="chkAddAll" align="center" onclick="AllCheck('id','chkAddu')" type="checkbox" name="chkAddu" />
                         </th>
-				<th style="width: 10%; text-align: center" class="asc" align="center">
+				<th style="width: 10%; text-align: center" class="asc">
                             序号
                         </th>
-					<th width="20%" orderField="class_no" align="center">班级编号</th>
-					<th width="20%" orderField="academy_no" align="center">学院</th>
-					<th width="20%" orderField="major" align="center">专业</th>
-					<th width="20%" orderField="number" align="center">班级人数</th>
+				
+					<th width="20%" orderField="title" align="center">标题</th>
+		
+					<th width="20%" orderField="type" align="center" >通知类型</th>
+					<th width="20%" orderField="time" align="center" >发布时间</th>
 				   <th style="width: 4%;" align="center">操作</th>								
 				</tr>
 			</thead>
 				<tbody>
 	<asp:Repeater ID="Repeater1" runat="server"  >
 	<ItemTemplate>
-	<tr id="flag" target="class" rel="<%# Eval("class_no") %>"> 
+	<tr id="flag" target="notice" rel="<%# Eval("id") %>"> 
 	
       <td align="center">
-      <input type="checkbox"  name="class_no" value="<%# Eval("class_no") %>" />
+      <input type="checkbox"  name="id" value="<%# Eval("id") %>" />
       </td>
-	  <td style="text-align: center" align="center">
+	  <td style="text-align: center">
           <%# Convert.ToInt32(Container.ItemIndex) + 1 + (NumPerPage * PageNum - NumPerPage)%>
       </td>
-	    <td align="center"><%# Eval("class_no")%></td>
-	    <td align="center"><%# Eval("academy_no")%></td>
-	    <td align="center"><%# Eval("major")%></td>
-	    <td align="center"><%# Eval("number")%></td>
+	    <td align="center"><%# Eval("title")%></td>
+	    <td align="center"><%# Eval("type")%></td>
+	    <td align="center"><%# Eval("time").ToString()%></td>
 	 <td align="center">
-        <a href="#" title="修改" class="btnEdit" onclick="navMenuEditTodoid('Admin/Class/ClassEdit.aspx','<%# Eval("class_no") %>','Edit','修改',700,400)" >修改</a>
+        <a href="#" title="修改" class="btnEdit" onclick="navMenuEditTodoid('Admin/Notice/NoticeEdit.aspx','<%# Eval("id") %>','Edit','修改',700,600)" >修改</a>
     </td>
 	</tr>
 	</ItemTemplate>

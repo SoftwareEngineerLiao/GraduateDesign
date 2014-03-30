@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebUI.Admin.User {
+namespace WebUI.Admin.Class {
     
     
-    public partial class UserAdd {
+    public partial class ClassAdd {
     }
 }

@@ -13,8 +13,6 @@
     <link href="themes/css/print.css" rel="stylesheet" type="text/css" media="print"/>
    <link href="themes/css/dwzextends.css" rel="stylesheet" type="text/css" />
 
-    
-
     <script src="DWZ/js/speedup.js" type="text/javascript"></script>
     <script src="DWZ/js/jquery-1.7.2.js" type="text/javascript"></script>
    
@@ -30,11 +28,21 @@
     
     <script src="DWZ/js/jquery.validate.min.js" type="text/javascript"></script> 
  <script src="DWZ/js/dwz.min.js" type="text/javascript"></script>
-    <script src="DWZ/xheditor/xheditor-1.1.14-zh-cn.min.js" type="text/javascript"></script>    
+ 
+    <script src="DWZ/xheditor/xheditor-1.2.1.min.js" type="text/javascript"></script>
+    <script src="DWZ/xheditor/xheditor_lang/zh-cn.js" type="text/javascript"></script>
+    
     <script src="DWZ/js/dwz.regional.zh.js" type="text/javascript"></script>
     <script src="DWZ/uploadify/scripts/jquery.uploadify.min.js" type="text/javascript"></script>
     <script src="DWZ/uploadify/scripts/jquery.uploadify.js" type="text/javascript"></script>
     <script src="JS/Help.js" type="text/javascript"></script>
+
+    <script src="DWZ/chart/raphael.js" type="text/javascript"></script>
+    <script src="DWZ/chart/g.bar.js" type="text/javascript"></script>
+    <script src="DWZ/chart/g.dot.js" type="text/javascript"></script>
+    <script src="DWZ/chart/g.line.js" type="text/javascript"></script>
+    <script src="DWZ/chart/g.pie.js" type="text/javascript"></script>
+    <script src="DWZ/chart/g.raphael.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(function(){
 	        DWZ.init("../DWZ/dwz.frag.xml", {

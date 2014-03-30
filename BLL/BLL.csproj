@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcademyBusi.cs" />
+    <Compile Include="ClassBusi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserBusi.cs" />
   </ItemGroup>

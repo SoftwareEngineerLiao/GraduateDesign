@@ -1,4 +1,4 @@
-﻿<%@ WebHandler Language="C#"  Class="ClassManage" %>
+﻿<%@ WebHandler Language="C#"  Class="AcademyManage" %>
 
 using System;
 using System.Data;
@@ -17,7 +17,7 @@ using Model;
 using BLL;
 using Commons;
 
-public class ClassManage : IHttpHandler, IRequiresSessionState
+public class AcademyManage : IHttpHandler, IRequiresSessionState
 {
  public void ProcessRequest(HttpContext context)
     {
@@ -39,30 +39,26 @@ public class ClassManage : IHttpHandler, IRequiresSessionState
         }
     }
 
-    
     /// <summary>
     /// 添加
-    /// </summary>a
+    /// </summary>
     public void Add(HttpContext context)
     {
+        AcademyBusi academyBusi = new AcademyBusi();
         try
         {
-            ClassBusi classBusi = new ClassBusi();
-            string class_no = context.Request.Form["class_no"];
-            if (classBusi.ChecClass(class_no, "class", "class_no"))
+            string txt_academy_no = context.Request.Form["academy_no"];
+            if (academyBusi.ChecAcademy(txt_academy_no, "academy", "academy_no"))
             {
-                context.Response.Write(failure("班级编号重复,"));
+                context.Response.Write(failure("学院编号重复，请重新填写！"));
                 return;
             }
-            string txt_class_no = context.Request.Form["class_no"];
-            string txt_academy_no = context.Request.Form["academy_no"];
-            string txt_major = context.Request.Form["major"];
-            string txt_number = context.Request.Form["number"];
+            string txt_academy_name = context.Request.Form["academy_name"];
             
-            string sql = "insert into class( academy_no,major,number) Values('" + txt_academy_no + "','" + txt_major + "','" + txt_number + "')";
+            string sql = "insert into academy(academy_no,academy_name) Values('" + txt_academy_no + "','" + txt_academy_name + "') ";
             Common comm = new Common();
             comm.ExecuteNonQuery(sql);
-            context.Response.Write(success("添加", "X002"));     
+            context.Response.Write(success("添加", "X001"));     
         }
         catch
         {
@@ -80,7 +76,7 @@ public class ClassManage : IHttpHandler, IRequiresSessionState
 
             string id = context.Request["id"];
             Common comm = new Common();
-            int count = comm.ExecuteNonQuery("delete from  class where class_no in (" + id + ") ");
+            int count = comm.ExecuteNonQuery("delete from  academy where academy_no in (" + id + ") ");
             context.Response.Write(success());
         }
         catch
@@ -98,26 +94,18 @@ public class ClassManage : IHttpHandler, IRequiresSessionState
         {
             string ID = context.Request["ID"];
             Common comm = new Common();
-            string txt_class_no = context.Request.Form["class_no"];
-            string txt_academy_no = context.Request.Form["academy_no"];
-            string txt_major = context.Request.Form["major"];
-            string txt_number = context.Request.Form["number"];
-            
-            //string pwd = "";   //避免为空的提交
-            //if (!String.IsNullOrEmpty(context.Request.Form["前台文本框的Name"]))
-            //    pwd = context.Request.Form["前台文本框的Name"];
-            //else
-            //    pwd = context.Request.Form["前台文本框的Name"];
-            
-            string sql = "update class  set academy_no = '"+ txt_academy_no+"',major = '"+ txt_major+"',number = '"+ txt_number+"' where class_no = '"+ ID +"' ";
+            string txt_academy_no = context.Request.Form["txt_academy_no"];
+            string txt_academy_name = context.Request.Form["txt_academy_name"];
+            string sql = "update academy  set academy_name = '" + txt_academy_name + "',academy_no = '" + txt_academy_no + "'  where academy_no = '" + ID + "' ";
             comm.ExecuteNonQuery(sql);
-            context.Response.Write(success("增加", "X002"));
+            context.Response.Write(success("增加", "X001"));
         }
         catch
         {
             context.Response.Write(failure());
         }
     }
+
     /// <summary>
     /// 返回成功的json {"statusCode":"200", "message":"操作成功!"}"
     /// </summary>

@@ -17,7 +17,7 @@ using Model;
 using BLL;
 using Commons;
 
-public class RoleManage : IHttpHandler, IRequiresSessionState
+public class RoleManage : IHttpHandler, IRequiresSessionState, AdminBasePage
 {
     Help help = new Help();
     public void ProcessRequest(HttpContext context)

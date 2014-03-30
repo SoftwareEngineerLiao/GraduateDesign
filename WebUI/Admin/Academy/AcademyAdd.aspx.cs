@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebUI.Admin.Class
+namespace WebUI.Admin.Academy
 {
-    public partial class ClassAdd1 : System.Web.UI.Page
+    public partial class AcademyAdd : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

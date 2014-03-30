@@ -3,26 +3,60 @@
 
   <!--班级管理-->
   <Group_List>
-    <title>班级管理显示</title>
+    <title>通知公告管理显示</title>
     <pid>C000</pid>
     <Group>
-      <name>班级信息管理显示</name>
+      <name>通知公告管理显示</name>
       <pid>C001</pid>
       <GroupOne>
-        <name>开通班级</name>
+        <name>添加</name>
         <pid>CC01</pid>
       </GroupOne>
       <GroupOne>
-        <name>修改班级</name>
+        <name>修改</name>
         <pid>CC02</pid>
       </GroupOne>
       <GroupOne>
-        <name>删除班级</name>
+        <name>删除</name>
         <pid>CC03</pid>
       </GroupOne>
+    </Group>
+  </Group_List>
+
+  <!--学院班级管理-->
+  <Group_List>
+    <title>学院班级管理显示</title>
+    <pid>X000</pid>
+    <Group>
+      <name>学院班级信息管理显示</name>
+      <pid>X001</pid>
       <GroupOne>
-        <name>添加学生</name>
-        <pid>CC04</pid>
+        <name>添加</name>
+        <pid>XX01</pid>
+      </GroupOne>
+      <GroupOne>
+        <name>修改</name>
+        <pid>XX02</pid>
+      </GroupOne>
+      <GroupOne>
+        <name>删除</name>
+        <pid>XX03</pid>
+      </GroupOne>
+    </Group>
+    <Group>
+      <name>学院班级信息管理显示</name>
+      <pid>X002</pid>
+      <GroupOne>
+        <name>添加</name>
+        <pid>CC01</pid>
+      </GroupOne>
+      <GroupOne>
+        <name>修改</name>
+        <pid>CC02</pid>
+      </GroupOne>
+      <GroupOne>
+        <name>删除</name>
+        <pid>CC03</pid>
       </GroupOne>
     </Group>
   </Group_List>

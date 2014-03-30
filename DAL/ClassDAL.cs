@@ -11,7 +11,7 @@ namespace DAL
     public class ClassDAL
     {
         private DataTable dt;
-        public DataTable GetClass(string orderStr, string keyString)
+        public DataTable GetClassAll(string orderStr, string keyString)
         {
             try
             {
